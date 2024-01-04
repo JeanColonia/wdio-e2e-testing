@@ -1,4 +1,4 @@
-# Install wdio (if you choose a specific directory, just put it after the before described code)
+##Install wdio (if you choose a specific directory, just put it after the before described code)
 - 'npm init wdio . or npm init wdio'
 
 
