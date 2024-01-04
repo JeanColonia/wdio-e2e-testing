@@ -1,22 +1,22 @@
-##Install wdio (if you choose a specific directory, just put it after the before described code)
+## Install wdio (if you choose a specific directory, just put it after the before described code)
 - 'npm init wdio . or npm init wdio'
 
 
-# package.json
+## package.json
 - Check module type: "type":"module" ---> if this code is missed (need to add lines above).
 
 
-# tsconfig.json
+## tsconfig.json
 - check "module": "ESNext"
 - check "resolveJsonModule": true
 - add "esModuleInterop": true,
 - change "strict":false
 
 
-# wdio.conf.ts
+## wdio.conf.ts
 - check "project: "./tsconfig.json"
 
-    ## code
+    ### code
          e.g.
              tsNodeOpts: {
             ---> project: './tsconfig.json',
@@ -24,14 +24,14 @@
         }
 - add "${process.cwd()}/test/features/**/*.feature"
 
-    ## code
+    ### code
           e.g.
            specs: [
              `${process.cwd()}/test/features/**/*.feature`
          ],
 
 - add "./test/features/step-definitions/*.ts"
-    ## code
+    ### code
         e.g. 
          cucumberOpts: {
             // <string[]> (file/dir) require files before executing features
