@@ -4,6 +4,7 @@ import chai from 'chai';
 
 Then(/^inventory page should list (.*) products$/, async function (numberOfProducts) {
 
+
  if (!numberOfProducts) throw Error(`Invalid number of products provided ${numberOfProducts}`);
 
  let arrProducts = await $$(".inventory_item_name");
@@ -42,6 +43,7 @@ Then(/^validate all products have a valid price$/, async () => {
 
  let invalidPrices = priceNumberArr.filter(ele => ele <= 0);
  chai.expect(invalidPrices.length).to.equal(0);
+
 
 
 })  

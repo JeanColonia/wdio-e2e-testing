@@ -1,0 +1,35 @@
+N 
+
+Execution of 3 workers started at 2024-01-09T19:58:44.453Z
+
+[0-2] N 
+[0-1] N 
+[0-0] N 
+[0-0] RUNNING in chrome - file:///C:/Users/Jean/Desktop/files/code/QA/Automation/WebdriverIO/wdio-1/test/features/demo/Inventory.feature
+[0-0] SCENARIO DATA ---> {"gherkinDocument":{"feature":{"tags":[],"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Inventory Web","description":"","children":[{"scenario":{"id":"2b7d0f96-83d6-4125-a14a-4b4892ce2348","tags":[{"location":{"line":4,"column":2},"name":"@demo","id":"77035563-67dd-469c-8fc1-61184abbab92"}],"location":{"line":5,"column":2},"keyword":"Scenario Outline","name":"<TestID>: Demo Inventory:","description":"","steps":[{"id":"582b525a-a18e-40d9-9074-239997eee531","location":{"line":6,"column":3},"keyword":"Given ","keywordType":"Context","text":"Login to inventory Web","dataTable":{"location":{"line":7,"column":4},"rows":[{"id":"fdaaeffc-d694-45f4-a120-7f993d13b176","location":{"line":7,"column":4},"cells":[{"location":{"line":7,"column":6},"value":"userType"},{"location":{"line":7,"column":24},"value":"userName"}]},{"id":"dd4b7f77-e4b3-4f91-8e4e-e92f398359fb","location":{"line":8,"column":4},"cells":[{"location":{"line":8,"column":6},"value":"standarUser"},{"location":{"line":8,"column":24},"value":"standar_user"}]},{"id":"1b915881-73a6-44ad-928f-5c206bec05a0","location":{"line":9,"column":4},"cells":[{"location":{"line":9,"column":6},"value":"performanceUser"},{"location":{"line":9,"column":24},"value":"performance_user"}]},{"id":"84b4c493-6da5-4d0c-9cc7-186b31b8b954","location":{"line":10,"column":4},"cells":[{"location":{"line":10,"column":6},"value":"troubleUser"},{"location":{"line":10,"column":24},"value":"trouble_user"}]}]}},{"id":"2f64e157-3c72-4aaa-9b66-9dd6324a570b","location":{"line":11,"column":3},"keyword":"Then ","keywordType":"Outcome","text":"inventory page should list <numberOfProducts> products"},{"id":"9c10b6da-ba44-4185-b7ee-9c866c8f11e5","location":{"line":12,"column":3},"keyword":"Then ","keywordType":"Outcome","text":"validate all products have a valid price"}],"examples":[{"id":"c1a073cb-329e-4ce5-a00e-599f09cf3477","tags":[],"location":{"line":13,"column":3},"keyword":"Examples","name":"","description":"","tableHeader":{"id":"6a62a01b-bcf2-4fc7-9856-9c4a47593f92","location":{"line":14,"column":4},"cells":[{"location":{"line":14,"column":6},"value":"TestID"},{"location":{"line":14,"column":18},"value":"numberOfProducts"}]},"tableBody":[{"id":"90eae3c1-b554-4b2d-bf30-960ea82e9d05","location":{"line":15,"column":4},"cells":[{"location":{"line":15,"column":6},"value":"WEB_TC001"},{"location":{"line":15,"column":18},"value":"6"}]}]}]}}]},"comments":[],"uri":"test\\features\\demo\\Inventory.feature"},"pickle":{"id":"049ca369-fa37-4bb5-823c-574279738d60","uri":"test\\features\\demo\\Inventory.feature","astNodeIds":["2b7d0f96-83d6-4125-a14a-4b4892ce2348","90eae3c1-b554-4b2d-bf30-960ea82e9d05"],"name":"WEB_TC001: Demo Inventory:","language":"en","steps":[{"id":"fbe360fe-3676-4bf9-8223-f8c912e4ba6e","text":"Login to inventory Web","type":"Context","argument":{"dataTable":{"rows":[{"cells":[{"value":"userType"},{"value":"userName"}]},{"cells":[{"value":"standarUser"},{"value":"standar_user"}]},{"cells":[{"value":"performanceUser"},{"value":"performance_user"}]},{"cells":[{"value":"troubleUser"},{"value":"trouble_user"}]}]}},"astNodeIds":["582b525a-a18e-40d9-9074-239997eee531","90eae3c1-b554-4b2d-bf30-960ea82e9d05"],"keyword":"Given "},{"id":"e50185eb-ae5f-48aa-81b8-c105b6f06e20","text":"inventory page should list 6 products","type":"Outcome","astNodeIds":["2f64e157-3c72-4aaa-9b66-9dd6324a570b","90eae3c1-b554-4b2d-bf30-960ea82e9d05"],"keyword":"Then "},{"id":"82da6ef4-aaba-4c54-8658-463e8748771d","text":"validate all products have a valid price","type":"Outcome","astNodeIds":["9c10b6da-ba44-4185-b7ee-9c866c8f11e5","90eae3c1-b554-4b2d-bf30-960ea82e9d05"],"keyword":"Then "}],"tags":[{"name":"@demo","astNodeId":"77035563-67dd-469c-8fc1-61184abbab92"}]},"testCaseStartedId":"b670ed33-8609-42d8-9ed4-f716847e3f2c"}
+[0-0] CONTEXT DATA ---> {"appId":"","testid":""}
+[0-0] WEB_TC001 DSADSADSADAS AESPÉRANDO.....
+[0-0] ARRAY CON NÚMEROS --------> 29,9,15,49,7,15
+[0-0] PASSED in chrome - file:///C:/Users/Jean/Desktop/files/code/QA/Automation/WebdriverIO/wdio-1/test/features/demo/Inventory.feature
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[chrome 120.0.6099.200 windows #0-0] Running: chrome (v120.0.6099.200) on windows
+[chrome 120.0.6099.200 windows #0-0] Session ID: 0ff53aaaf3768d9042a340e0129d6f7b
+[chrome 120.0.6099.200 windows #0-0]
+[chrome 120.0.6099.200 windows #0-0] » \test\features\demo\Inventory.feature
+[chrome 120.0.6099.200 windows #0-0] Inventory Web
+[chrome 120.0.6099.200 windows #0-0] WEB_TC001: Demo Inventory:
+[chrome 120.0.6099.200 windows #0-0]    ✓ Given Login to inventory Web
+[chrome 120.0.6099.200 windows #0-0]      │ userType        │ userName         │
+[chrome 120.0.6099.200 windows #0-0]      │ standarUser     │ standar_user     │
+[chrome 120.0.6099.200 windows #0-0]      │ performanceUser │ performance_user │
+[chrome 120.0.6099.200 windows #0-0]      │ troubleUser     │ trouble_user     │
+[chrome 120.0.6099.200 windows #0-0]    ✓ Then inventory page should list 6 products
+[chrome 120.0.6099.200 windows #0-0]    ✓ Then validate all products have a valid price
+[chrome 120.0.6099.200 windows #0-0]
+[chrome 120.0.6099.200 windows #0-0] 3 passing (3.5s)
+
+
+Spec Files:	 1 passed, 2 skipped, 3 total (100% completed) in 00:00:09  
+
