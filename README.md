@@ -98,3 +98,36 @@
  
 
 
+# Api Testing Integration with WebdriverIO
+
+
+### We need to install "supertest" as a dev depedency 
+
+### code
+    npm install --save-dev supertest
+
+### for more information access to his main page, link below:
+    https://ladjs.github.io/superagent/
+
+### example of request code: (GET Method):
+
+### code: 
+    async function GET(testid: string, baseUrl: string, endpoint: string, authToken: string, queryParam: Object) {
+    if (!(baseUrl || endpoint)) throw Error(`One of the given values BaseUrl: ${baseUrl}, endpoint: ${endpoint} is not valid`);
+    baseUrl = baseUrl.trim()
+    endpoint = endpoint.trim()
+
+    reporter.addStep(testid, "info", `Making a GET request to ${baseUrl}${endpoint}`)
+    try {
+
+    return await request(baseUrl).get(endpoint).query(queryParam).auth(authToken, { type: 'bearer' }).set("Content-Type", "application/json").set("Accept", "application/json")
+
+
+    } catch (error) {
+    throw error;
+    }
+
+    }
+
+
+

@@ -37,7 +37,6 @@ Then(/^validate all products have a valid price$/, async () => {
  priceNumberArr = priceStrArr.map(ele => parseInt(ele.replace("$", "")));
 
 
- console.log(`ARRAY CON NÚMEROS --------> ${priceNumberArr}`);
 
  //validar que no existan menores o iguales que cero.
 

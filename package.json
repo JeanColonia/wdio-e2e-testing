@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test:demo": "set DEBUG=N && set HEADLESS=N && npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@demo' && allure serve",
+    "test:demo": "set DEBUG=N && set HEADLESS=N && npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@demo'",
     "test:smoke": "set DEBUG=N && set HEADLESS=Y && npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@smoke'",
     "wdio": "wdio run ./wdio.conf.ts",
     "test:debug": "set DEBUG=Y && set HEADLESS=N && npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@demo'"
@@ -26,6 +26,7 @@
     "@wdio/spec-reporter": "^8.27.0",
     "chai": "^4.3.10",
     "dotenv": "^16.3.1",
+    "supertest": "^6.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "winston": "^3.11.0"
