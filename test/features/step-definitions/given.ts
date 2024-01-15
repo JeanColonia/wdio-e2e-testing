@@ -24,4 +24,14 @@ Given(/^Login to inventory Web$/, async function (table) {
  reporter.addStep(this.testid, "info", "Success login to inventory website...");
 
 
-})
+});
+
+
+
+
+Given(/^Get list of (.*) from reqres.in$/, async function (endpoint: string) {
+
+});
+
+
+

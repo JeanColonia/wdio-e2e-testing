@@ -45,4 +45,11 @@ Then(/^validate all products have a valid price$/, async () => {
 
 
 
-})  
+});
+
+
+
+
+Then(/^Verify if all users exist in customers list$/, async function () {
+
+})
