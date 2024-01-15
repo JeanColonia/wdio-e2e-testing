@@ -1,0 +1,8 @@
+{
+ "REQRES": {
+  "GET_USERS": "/api/users",
+  "QUERY_PARAMS": {
+   "page": 2
+  }
+ }
+}

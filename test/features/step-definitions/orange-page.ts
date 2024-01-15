@@ -20,7 +20,6 @@ When(/^I insert username: <username> and password: <password>(.*)/, async (usern
 When(/^clicked on Login button/, async () => {
 
  const loginBtn = await $("button*=' Login ']");
-
  await loginBtn.click();
 });
 
