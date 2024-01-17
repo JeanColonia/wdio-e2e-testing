@@ -1,5 +1,10 @@
 import { Then } from '@wdio/cucumber-framework';
 import chai from 'chai';
+import reporter from '../../helpers/reporter.ts';
+import fs from "fs";
+
+import nopcommerceCustlistPage from '../../page-objects/nopcommerce.custlist.page.ts';
+import customerPage from '../../page-objects/nopcommerce.custlist.page.ts';
 
 
 Then(/^inventory page should list (.*) products$/, async function (numberOfProducts) {
@@ -51,5 +56,68 @@ Then(/^validate all products have a valid price$/, async () => {
 
 
 Then(/^Verify if all users exist in customers list$/, async function () {
+
+ try {
+
+
+  await customerPage.customersMenu();
+
+
+  reporter.addStep(this.testid, "info", `Navigating to Customers page`);
+
+
+  //Getting Customer data values from json file before storaged with API.
+
+  let file = `${process.cwd()}/data/api-res/api-results.json`;
+
+  let data = fs.readFileSync(file, "utf8");
+
+  let dataObject = JSON.parse(data);
+
+
+
+  let numberDataObject = dataObject.data.length;
+  let arr = [];
+
+  for (let i = 0; i < numberDataObject; i++) {
+
+   let firstname = dataObject.data[i].first_name;
+   let lastname = dataObject.data[i].last_name;
+
+   let obj = {};
+
+   let customerNotFound = await nopcommerceCustlistPage.searchNameAndConfirm(this.testid, firstname, lastname);
+
+   if (customerNotFound) {
+
+    obj["firstname"] = firstname;
+    obj["lastname"] = lastname;
+
+    arr.push(obj);
+   }
+
+  }
+
+
+  if (arr.length > 1) {
+
+   //creamos el file json a guardar con la data de customers
+
+
+   let data = JSON.stringify(arr, undefined, 4);
+   let filePath = `${process.cwd()}/results/customer-list-not-found.json`;
+
+
+   fs.writeFileSync(filePath, data);
+
+  }
+
+ } catch (error) {
+
+  error = `Error on customer validation, ${error.message}`;
+
+  throw error;
+ }
+
 
 })

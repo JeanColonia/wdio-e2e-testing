@@ -131,3 +131,23 @@
 
 
 
+## Cross Browser Testing
+### To Run test in other browsers, check example below:
+
+#### code
+     Refer to this npm page --instructions are provided
+     Link:
+     https://www.npmjs.com/package/wdio-geckodriver-service
+
+#### Install two npm packages:
+      npm i --save-dev wdio-gecko-driver-service
+
+      npm i --save-dev geckodriver
+
+### Add configs in wdio.conf.ts
+    > Add another capability object in capabilities array with browserName as firefox.
+
+    >Add a new service  as "geckodriver"
+
+
+

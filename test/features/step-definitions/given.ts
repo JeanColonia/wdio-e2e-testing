@@ -66,14 +66,13 @@ Given(/^Get list of (.*) from reqres.in$/, async function (endpointRef) {
    res = await apiHelper.GET(testid, process.env.REQRESBASEURL, endpoint, "", constants.REQRES.QUERY_PARAMS);
    if (res.status !== 200) throw Error(`Failed getting users from endpoint ${process.env.REQRESBASEURL}${endpoint}`);
 
-   console.log(`TYPEOF RES--->${res}`);
   })
 
 
   reporter.addStep(this.testid, "debug", `API response received, data ${JSON.stringify(res.body)}`);
 
 
-  console.log(`TYPEOF ${res.body}`);
+
 
 
   let data = JSON.stringify(res.body, undefined, 4);
