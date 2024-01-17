@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test:demo": "set DEBUG=N && set HEADLESS=N && npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@demo'",
-    "test:smoke": "set DEBUG=N && set HEADLESS=Y && npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@smoke'",
+    "test:demo": "npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@demo'",
+    "test:smoke": "npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@smoke'",
     "wdio": "wdio run ./wdio.conf.ts",
-    "test:debug": "set DEBUG=Y && set HEADLESS=N && npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@demo'"
+    "test:debug": "npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@demo'"
   },
   "keywords": [
     "wdio",
