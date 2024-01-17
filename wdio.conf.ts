@@ -5,8 +5,9 @@ import fs from 'fs';
 
 dotenv.config();
 import type { Options } from '@wdio/types'
-// let headless = process.env.HEADLESS;
-// let debug = process.env.DEBUG;
+let headless = process.env.HEADLESS;
+let debug = process.env.DEBUG;
+
 
 export const config: Options.Testrunner = {
     //
@@ -88,9 +89,9 @@ export const config: Options.Testrunner = {
         {
             browserName: 'chrome',
             maxInstances: 3,
-            // "goog:chromeOptions": {
-            //     args: headless?.trim().toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080", "--disable-gpu"] : []
-            // },
+            "goog:chromeOptions": {
+                args: headless.trim().toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080", "--disable-gpu"] : []
+            },
             acceptInsecureCerts: true,
             //  timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 }
         },
@@ -112,8 +113,7 @@ export const config: Options.Testrunner = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
-    //debug?.trim().toUpperCase() === "Y" ? 'info' : 'error',
+    logLevel: debug.trim().toUpperCase() === "Y" ? 'info' : 'error',
     //
     // Set specific log levels per logger
     // loggers:
