@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test:demo": "npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@demo'",
-    "test:smoke": "npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@smoke' --headless ",
+    "test:smoke": "npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@smoke'",
     "wdio": "wdio run ./wdio.conf.ts",
     "test:debug": "npx wdio config/wdio.test.conf.ts --cucumberOpts.tagExpression='@demo'"
   },
