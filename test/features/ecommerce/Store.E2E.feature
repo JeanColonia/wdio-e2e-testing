@@ -1,6 +1,6 @@
 Feature: E2E Test to Store Website
 
-  #@smoke
+  @smoke
   Scenario Outline: <TestID>: Search external customers
 
     Given Get list of users from reqres.in
