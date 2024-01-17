@@ -96,12 +96,15 @@ export const config: Options.Testrunner = {
             //  timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 }
         },
 
-        {
-            browserName: 'firefox',
-            maxInstances: 3,
-            acceptInsecureCerts: true,
-            // timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 }
-        }
+
+        //FIREFOX---->
+        // {
+        //     browserName: 'firefox',
+        //     maxInstances: 3,
+        //     acceptInsecureCerts: true,
+        //     headless: headless.trim().toUpperCase() === 'Y' ? true : false
+        //     // timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 }
+        // }
 
 
     ],
