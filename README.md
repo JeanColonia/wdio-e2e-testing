@@ -140,8 +140,8 @@
      https://www.npmjs.com/package/wdio-geckodriver-service
 
 #### Install two npm packages:
-      npm i --save-dev wdio-gecko-driver-service
-
+    npm install wdio-geckodriver-service --save-dev
+ 
       npm i --save-dev geckodriver
 
 ### Add configs in wdio.conf.ts

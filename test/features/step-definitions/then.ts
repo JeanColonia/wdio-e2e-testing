@@ -59,9 +59,7 @@ Then(/^Verify if all users exist in customers list$/, async function () {
 
  try {
 
-
-  await customerPage.customersMenu();
-
+  await browser.url("https://admin-demo.nopcommerce.com/Admin/Customer/List");
 
   reporter.addStep(this.testid, "info", `Navigating to Customers page`);
 

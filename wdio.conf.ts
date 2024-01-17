@@ -83,15 +83,27 @@ export const config: Options.Testrunner = {
     * --binary=<location>
     * --auth-server-white-list="_" 
 ***/
-    capabilities: [{
-        browserName: 'chrome',
-        maxInstances: 5,
-        "goog:chromeOptions": {
-            args: headless.trim().toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080", "--disable-gpu"] : []
+    capabilities: [
+
+        {
+            browserName: 'chrome',
+            maxInstances: 3,
+            "goog:chromeOptions": {
+                args: headless.trim().toUpperCase() === "Y" ? ["--disable-web-security", "--headless", "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080", "--disable-gpu"] : []
+            },
+            acceptInsecureCerts: true,
+            //  timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 }
         },
-        acceptInsecureCerts: true,
-        timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 }
-    }],
+
+        {
+            browserName: 'firefox',
+            maxInstances: 3,
+            acceptInsecureCerts: true,
+            // timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 }
+        }
+
+
+    ],
 
     //
     // ===================
@@ -140,7 +152,7 @@ export const config: Options.Testrunner = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: [],
+    services: ['geckodriver'],
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
