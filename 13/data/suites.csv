@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jan 22 17:00:05 GMT 2024","Mon Jan 22 17:00:25 GMT 2024","20385","","E2E Test to Store Website","","","","<TestID>: Search external customers",""

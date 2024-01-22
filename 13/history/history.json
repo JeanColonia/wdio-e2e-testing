@@ -1,0 +1,1 @@
+{"e6214354566aaf3288be4f615671691b":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"86586d2dc3db7e76","reportUrl":"https://JeanColonia.github.io/wdio-e2e-testing/13//#testresult/86586d2dc3db7e76","status":"passed","time":{"start":1705942805311,"stop":1705942825696,"duration":20385}}]}}
