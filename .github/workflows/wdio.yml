@@ -69,4 +69,4 @@ jobs:
         env:
           PERSONAL_TOKEN: ${{secrets.GH_TOKEN}}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH-DIR: allure-history
+          PUBLISH_DIR: allure-history
