@@ -47,10 +47,10 @@ jobs:
       - name: Get allure history
         uses: actions/checkout@v2
         if: always()
-        continuye-on-error: true
+        continue-on-error: true
         with:
-        ref: gh-pages
-        path: gh-pages
+          ref: gh-pages
+          path: gh-pages
       
       - name: Get allure report Action
         uses: simple-elf/allure-report-action@master
@@ -67,6 +67,6 @@ jobs:
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         env:
-          PERSONAL_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PERSONAL_TOKEN: ${{secrets.GH_TOKEN}}
           PUBLISH_BRANCH: gh-pages
           PUBLISH-DIR: allure-history
