@@ -3,9 +3,9 @@
 name: WDIO-CI
 on:
   push:
-    branches: [ master]
+    branches: [ master, release]
   pull_request:
-    branches: [ master]
+    branches: [ master, release]
   workflow_dispatch:
 jobs:
   build:
@@ -33,7 +33,40 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
+
+      # Run tests (install and run)
       - name: Install dependencies
         run: npm install
       - name: Running smoke tests
         run: npm run test:smoke
+
+
+
+      #Allure report configs and gh-pages
+
+      - name: Get allure history
+        uses: actions/checkout@v2
+        if: always()
+        continuye-on-error: true
+        with:
+        ref: gh-pages
+        path: gh-pages
+      
+      - name: Get allure report Action
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure-report: allure-results
+          gh_pages: gh-pages
+          allure-report: allure-report
+          allure-history: allure-history
+          keep-reports: 20
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH-DIR: allure-history
