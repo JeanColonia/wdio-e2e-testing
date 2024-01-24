@@ -8,6 +8,6 @@ Feature: Demo feature
     Then URL should match <expectedResult>
 
     Examples:
-      | searchItem | expectedResult           |
-      | wdio       | https://webdriver.io/es/ |
+      | searchItem  | expectedResult        |
+      | webdriverio | https://webdriver.io/ |
 

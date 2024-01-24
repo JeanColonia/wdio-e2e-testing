@@ -1,4 +1,7 @@
-## Install wdio (if you choose a specific directory, just put it after the before described code)
+## Create package.json file
+- npm init 
+
+## Install wdio (if you choose a specific directory, just put it after the before desscribed code)
 - 'npm init wdio . or npm init wdio'
 
 
@@ -7,13 +10,13 @@
 
 
 ## tsconfig.json
-- check "module": "ESNext"
+- check "module": "ESNext"s
 - check "resolveJsonModule": true
 - add "esModuleInterop": true,
-- change "strict":false
+- change "strict":falses
 
-
-## wdio.conf.ts
+s
+## wdio.conf.tss
 - check "project: "./tsconfig.json"
 
     ### code
@@ -151,3 +154,21 @@
 
 
 
+## Database Interactions (Using MSSQL SERVER CONN)
+
+### To work with databases you need to install the respect dependecies
+
+### e.g. we'll install MS SQL SERVER 
+
+### code
+    1.   npm i --save-dev mssql
+
+
+    2.   npm i --save-dev @types/mssql
+
+    3.   npm i --save-dev msnodesqlv8
+
+
+
+#### Notes:
+     to run a simple ts file use "npx tsx file.(type of file 'ts')"

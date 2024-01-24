@@ -2,6 +2,7 @@ Feature: Inventory Web
 
 
 
+ #@smoke @debug
  Scenario Outline: <TestID>: Demo Inventory:
   Given Login to inventory Web
    | username      | password     |

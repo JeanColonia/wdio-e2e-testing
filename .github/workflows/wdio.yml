@@ -7,6 +7,7 @@ on:
   pull_request:
     branches: [ master, release]
   workflow_dispatch:
+permissions: write-all
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,6 +16,16 @@ jobs:
       LOG_LEVEL: ${{secrets.LOG_LEVEL}}
       TEST_NOP_ADMIN_USERNAME: ${{secrets.TEST_NOP_ADMIN_USERNAME}}
       TEST_NOP_ADMIN_PASSWORD: ${{secrets.TEST_NOP_ADMIN_PASSWORD}}
+      DEBUG: ${{secrets.DEBUG}}
+      HEADLESS: ${{secrets.HEADLESS}}
+
+      TEST_NOP_BASEURL: ${{secrets.TEST_NOP_BASEURL}}
+      TEST_NOP_CUSTOMERS: ${{secrets.TEST_NOP_CUSTOMERS}}
+      TEST_NOP_LOGIN: ${{secrets.TEST_NOP_LOGIN}}
+      SAUCE_DEMO_URL: ${{secrets.SAUCE_DEMO_URL}}
+      TEST_USER: ${{secrets.TEST_USER}}
+      REQRESBASEURL: ${{secrets.REQRESBASEURL}}
+
     steps:
       - name: Install Chromium
         run: sudo apt-get install chromium-browser
@@ -23,7 +34,40 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
+
+      # Run tests (install and run)
       - name: Install dependencies
         run: npm install
       - name: Running smoke tests
         run: npm run test:smoke
+
+
+
+      #Allure report configs and gh-pages
+
+      - name: Get allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+      
+      - name: Get allure report Action
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results: allure-results
+          gh_pages: gh-pages
+          allure-report: allure-report
+          allure-history: allure-history
+          keep-reports: 20
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{secrets.GH_TOKEN}}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
