@@ -15,7 +15,17 @@
 - add "esModuleInterop": true,
 - change "strict":falses
 
-s
+- Aditional values in this file(tsconfig.json) would not generate type errors:
+
+        "types": [
+        "node",
+        "webdriverio/async",
+        "@wdio/cucumber-framework",
+        "expect-webdriverio",
+        "@wdio/globals/types"
+
+        ]
+
 ## wdio.conf.tss
 - check "project: "./tsconfig.json"
 
