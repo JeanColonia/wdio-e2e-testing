@@ -1,6 +1,9 @@
 import dotenv from 'dotenv';
 import allure from '@wdio/allure-reporter';
 
+import fss from 'node:fs/promises'
+import { generate } from 'multiple-cucumber-html-reporter';
+
 import fs from 'fs';
 
 dotenv.config();
@@ -198,6 +201,7 @@ export const config: Options.Testrunner = {
 
         ],
 
+        'cucumberjs-json',
 
     ],
 
@@ -242,11 +246,15 @@ export const config: Options.Testrunner = {
      */
     onPrepare: function (config, capabilities) {
 
+
+
         if (process.env.RUNNER === "LOCAL" && fs.existsSync("./allure-results")) {
             fs.rmdirSync("./allure-results", {
                 recursive: true
             })
         }
+
+        return fss.rm('.tmp/', { recursive: true });
 
     },
     /**
@@ -408,8 +416,17 @@ export const config: Options.Testrunner = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+    onComplete: function (exitCode, config, capabilities, results) {
+
+        generate({
+            // Required
+            // This part needs to be the same path where you store the JSON files
+            // default = '.tmp/json/'
+            jsonDir: '.tmp/json/',
+            reportPath: '.tmp/report/',
+            // for more options see https://github.com/wswebcreation/multiple-cucumber-html-reporter#options
+        });
+    },
     /**
     * Gets executed when a refresh happens.
     * @param {string} oldSessionId session ID of the old session

@@ -3,7 +3,9 @@
 allure-results
 debug
 
-
+#cucumber-json reports
+tmp
+.tmp
 # Logs
 logs
 *.log

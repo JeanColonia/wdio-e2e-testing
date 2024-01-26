@@ -34,7 +34,12 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
+    "wdio-cucumberjs-json-reporter": "^5.1.8",
     "wdio-geckodriver-service": "^5.0.2",
     "winston": "^3.11.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "multiple-cucumber-html-reporter": "^3.6.1"
   }
 }
