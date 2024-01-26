@@ -109,6 +109,66 @@
             })
         }
  
+ ### add code below into wdio.conf.ts (report section):
+        reporters: [
+        // Like this with the default options, see the options below
+        'cucumberjs-json',
+
+        // OR like this if you want to set the folder and the language
+        [ 'cucumberjs-json', {
+                jsonFolder: '.tmp/new/',
+                language: 'en',
+            },
+        ],
+    ],
+
+
+### Then import this couple of packages/dependecies:
+
+    import fs from 'node:fs/promises'
+    // Import the module
+    import { generate } from 'multiple-cucumber-html-reporter'
+
+
+### Add remove function and generate:
+
+     onPrepare: () => {
+    // Remove the `.tmp/` folder that holds the json and report files
+    return fs.rm('.tmp/', { recursive: true });
+    },
+
+
+
+     generate({
+      // Required
+      // This part needs to be the same path where you store the JSON files
+      // default = '.tmp/json/'
+      jsonDir: '.tmp/json/',
+      reportPath: '.tmp/report/',
+      // for more options see https://github.com/wswebcreation/multiple-cucumber-html-reporter#options
+    });
+
+
+
+### Additional dependencies:
+
+### multiple-cucumber-html-reporter:
+
+    npm install multiple-cucumber-html-reporter --save-dev
+
+
+### fs-extra:
+    npm i fs-extra
+
+
+
+
+
+## Cucumber json Reporter
+### Previusly configs:
+
+### code:
+    npm install wdio-cucumberjs-json-reporter --save-dev
 
 
 # Api Testing Integration with WebdriverIO
