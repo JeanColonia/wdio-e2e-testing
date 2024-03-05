@@ -18,6 +18,17 @@
 ## Create package.json file
 - npm init 
 
+## Run test:
+    - npm run test:demo (running all tests with demo tag)
+    - npm run test:smoke (running all tests with demo smoke)
+    - npm run test:debug (running all tests with demo debug)
+
+
+## Run Docker Compose  (Grid Execution)
+     To execute grid strategy tests with Docker, run code below:
+
+        - docker-compose up
+        
 ## Install wdio (if you choose a specific directory, just put it after the before desscribed code)
 - 'npm init wdio . or npm init wdio'
 
