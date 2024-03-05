@@ -292,8 +292,7 @@
  
 
  ##### Starting Docker
- [![starting-docker.png](https://i.postimg.cc/Y061Vgsh/starting-docker.png)](https://postimg.cc/tngZn1yj)
-
+[![starting-docker.png](https://i.postimg.cc/Y061Vgsh/starting-docker.png)](https://postimg.cc/tngZn1yj)
 
  ##### Image in Docker Desktop
 [![docker-desktop.png](https://i.postimg.cc/fbyfLVJr/docker-desktop.png)](https://postimg.cc/bGXtVN0x)
