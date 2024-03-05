@@ -1,6 +1,6 @@
 Feature: Demo feature
 
-  #@demo @debug
+  @demo
   Scenario Outline: Run our firt demo feature
     Given Google page is opened
     When Search with <searchItem>
@@ -9,5 +9,5 @@ Feature: Demo feature
 
     Examples:
       | searchItem  | expectedResult        |
-      | webdriverio | https://webdriver.io/ |
+      | webdriverio | https://webdriver.io/es/ |
 

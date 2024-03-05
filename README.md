@@ -5,6 +5,7 @@
     - Nodejs
     - Webdriverio
     - GitHub Actions
+    - GitHub Pages
     - Docker
     - MS SQL Server
     - Cucumber
@@ -20,15 +21,18 @@
 
 ## Run test:
     - npm run test:demo (running all tests with demo tag)
-    - npm run test:smoke (running all tests with demo smoke)
-    - npm run test:debug (running all tests with demo debug)
+    - npm run test:smoke (running all tests with  smoke tag)
+    - npm run test:debug (running all tests with  debug tag)
+    - npm run test:grid (runnig all tests with demo tag in docker grid)
 
+## CI Integration
 
 ## Run Docker Compose  (Grid Execution)
      To execute grid strategy tests with Docker, run code below:
 
         - docker-compose up
-        
+        - npm run test:grid
+
 ## Install wdio (if you choose a specific directory, just put it after the before desscribed code)
 - 'npm init wdio . or npm init wdio'
 
@@ -272,5 +276,29 @@
      to run a simple ts file use "npx tsx file.(type of file 'ts')"
 
 
+### Github Actions and Github Pages (reporter repository):
+
+#### Github Actions CI running pipeline
+[![gh-actions-2.png](https://i.postimg.cc/brcx3LL7/gh-actions-2.png)](https://postimg.cc/7G9JL3F9)
+
+#### Github Pages Source Branch
+[![gh-pages-source.png](https://i.postimg.cc/W4y6JsZb/gh-pages-source.png)](https://postimg.cc/kVxt03wk)
+
+
+#### Github Pages Report
+[![gh-pages-2.png](https://i.postimg.cc/wvs5Xn55/gh-pages-2.png)](https://postimg.cc/k6qt91pD)
+
+### Grid Execution  with Docker Compose Example:
+ 
+
+ ##### Starting Docker
+ [![starting-docker.png](https://i.postimg.cc/Y061Vgsh/starting-docker.png)](https://postimg.cc/tngZn1yj)
+
+
+ ##### Image in Docker Desktop
+[![docker-desktop.png](https://i.postimg.cc/fbyfLVJr/docker-desktop.png)](https://postimg.cc/bGXtVN0x)
+
+ ##### Selenium Grid Execution
+[![grid-test-execution.png](https://i.postimg.cc/jd6XkVpZ/grid-test-execution.png)](https://postimg.cc/3dRmdqJv)
 
 
