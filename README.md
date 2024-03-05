@@ -1,3 +1,20 @@
+# Web Automation Testing App (POM Pattern - Step Definition Pattern )
+  This application is about automate web pages supported by nodejs and webdriverio.
+
+## Tecnology Stack:
+    - Nodejs
+    - Webdriverio
+    - GitHub Actions
+    - Docker
+    - MS SQL Server
+    - Cucumber
+    - Allure reporter
+    - Cucumber Reporter
+    - Chai 
+    - SuperTest 
+    - TypeScript
+    - Winston
+
 ## Create package.json file
 - npm init 
 
@@ -242,3 +259,7 @@
 
 #### Notes:
      to run a simple ts file use "npx tsx file.(type of file 'ts')"
+
+
+
+
